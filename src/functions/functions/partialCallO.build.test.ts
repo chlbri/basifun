@@ -1,7 +1,6 @@
 import type { Fn } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { toString2 } from '../numbers/toString2';
-import { partialCallO } from './partialCallO';
+import { partialCallO, toString2 } from 'this1';
 
 const add: Fn<[{ valN: number; valS: string }], string> = ({
   valN,

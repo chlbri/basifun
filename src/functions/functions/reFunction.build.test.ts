@@ -1,5 +1,5 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { reFunction } from './reFunction';
+import { reFunction } from 'this1';
 
 describe('reFunction', () => {
   const obj = {

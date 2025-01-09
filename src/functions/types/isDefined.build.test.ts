@@ -1,5 +1,5 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { isDefined } from './isDefined';
+import { isDefined } from 'this1';
 
 describe('isDefined', () => {
   const useTests = createTests(isDefined);

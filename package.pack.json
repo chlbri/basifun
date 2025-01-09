@@ -13,9 +13,9 @@
   },
   "license": "MIT",
   "type": "module",
-  "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "module": "lib/index.js",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "module": "index.js",
   "maintainers": [
     {
       "email": "bri_lvi@icloud.com",
@@ -30,46 +30,15 @@
       "url": "https://bemedev.vercel.app"
     }
   ],
-  "keywords": [
-    "types",
-    "usefull"
-  ],
-  "files": [
-    "lib",
-    "public"
-  ],
+  "keywords": ["types", "usefull"],
   "engines": {
     "node": ">=20"
-  },
-  "scripts": {
-    "build": "pnpm run lib:rm && pnpm run rollup",
-    "build:pack": "pnpm run rm && pnpm run config:off && pnpm run build && pnpm run pack",
-    "ci": "pnpm run build:pack && pnpm run lint && pnpm run test && pnpm run build",
-    "ci:online": "pnpm run config && pnpm run lint && pnpm run test && pnpm run build",
-    "config": "pnpm install",
-    "config:off": "pnpm run config --offline",
-    "dep:off": "pnpm run dep --offline",
-    "eslint": "eslint ",
-    "lib:rm": "rm -rf lib",
-    "lint": "pnpm run prettier && pnpm run eslint --fix",
-    "pack": "tsx ./.pack/toPack.ts",
-    "p-q": "pretty-quick --staged",
-    "prepare": "husky",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "rinit": "pnpm run rm && pnpm run config",
-    "rinit:off": "pnpm run rinit --offline",
-    "rm": "rm -rf node_modules pnpm-lock.yaml",
-    "rollup": "rollup -c",
-    "test": "pnpm run test:coverage --no-coverage",
-    "test:coverage": "vitest run --passWithNoTests",
-    "test:watch": "vitest --passWithNoTests",
-    "upgrade": "pnpm upgrade --latest"
   },
   "devDependencies": {
     "@bemedev/fsf": "^0.7.3",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.0.2",
-    "@bemedev/vitest-extended": "^0.5.1",
+    "@bemedev/vitest-extended": "^0.5.0",
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.17.0",
     "@types/node": "^22.10.5",
@@ -85,12 +54,10 @@
     "prettier": "^3.4.2",
     "pretty-quick": "^4.0.0",
     "rollup": "^4.30.1",
-    "rollup-plugin-circular-dependencies": "^1.1.2",
     "rollup-plugin-node-externals": "^8.0.0",
     "rollup-plugin-tsc-alias": "^1.1.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "shelljs": "^0.8.5",
-    "this1": "file:.pack/bemedev-basicfunc-0.0.1.tgz",
     "tslib": "^2.8.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3",

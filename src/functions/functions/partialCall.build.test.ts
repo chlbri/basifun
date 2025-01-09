@@ -1,7 +1,6 @@
 import type { Fn } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { toString2 } from '../numbers/toString2';
-import { partialCall } from './partialCall';
+import { partialCall, toString2 } from 'this1';
 
 const add: Fn<[number, number], number> = (val1, val2) => val1 + val2;
 

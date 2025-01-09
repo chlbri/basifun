@@ -1,7 +1,6 @@
 import type { NOmit } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { toString2 } from '../numbers/toString2';
-import { switchValue } from './switchValue';
+import { switchValue, toString2 } from 'this1';
 
 const useTests = useEach(switchValue);
 
