@@ -24,9 +24,6 @@ jobs:
         with:
           branch: ${{ inputs.branch }}
 
-      - name: Big install
-        run: pnpm i
-
       - name: lint
         run: pnpm run lint
 
