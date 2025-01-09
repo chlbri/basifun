@@ -14,4 +14,9 @@ export type Refunction_F = <
 export type PartialCall_F = <T extends ArrayR, U extends ArrayR, R>(
   f: Fn<[...T, ...U], R>,
   ...headArgs: T
-) => (...tailArgs: U) => R;
+) =>  (...tailArgs: U) => R;
+
+export type PartialCallO_F = <T extends object, U extends T, R>(
+  f: Fn<[arg: U], R>,
+  headArgs?: T,
+) => Fn<[remainArgs: Omit<U, keyof T>], R>;
