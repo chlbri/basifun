@@ -1,7 +1,7 @@
 {
-  "name": "@bemedev///TODO",
+  "name": "@bemedev/basicfunc",
   "version": "0.0.1",
-  "description": "//TODO",
+  "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
     "name": "chlbri",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "//TODO"
+    "url": "https://github.com/chlbri/basifunc"
   },
   "license": "MIT",
   "type": "module",
@@ -31,7 +31,8 @@
     }
   ],
   "keywords": [
-    "//TODO"
+    "types",
+    "usefull"
   ],
   "files": [
     "lib",
@@ -41,10 +42,9 @@
     "node": ">=20"
   },
   "scripts": {
-    "config": "pnpm install",
+    "config": "pnpm install --frozen-lockfile",
     "config:off": "pnpm run config --offline",
     "ci": "pnpm run config:off && pnpm run lint && pnpm run build && pnpm run test && pnpm run build",
-    "ci:admin": "pnpm run rm && pnpm run ci",
     "rollup": "rollup -c",
     "build": "pnpm rm:lib && pnpm run rollup",
     "p-q": "pretty-quick --staged",
@@ -87,7 +87,11 @@
     "rollup-plugin-tsc-alias": "^1.1.2",
     "rollup-plugin-typescript2": "^0.36.0",
     "tslib": "^2.8.1",
+    "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@bemedev/types": "^0.1.3"
   }
 }
