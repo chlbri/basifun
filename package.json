@@ -43,7 +43,7 @@
   },
   "scripts": {
     "build": "pnpm run lib:rm && pnpm run rollup",
-    "build:pack": "pnpm run rm && pnpm run config:off && pnpm run build && pnpm run pack",
+    "build:pack": "pnpm run rm && pnpm run config && pnpm run build && pnpm run pack",
     "ci": "pnpm run build:pack && pnpm run lint && pnpm run test && pnpm run build",
     "ci:online": "pnpm run config && pnpm run lint && pnpm run test && pnpm run build",
     "config": "pnpm install",
