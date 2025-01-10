@@ -12,4 +12,4 @@ export const TARBALL_FOLDER = '.pack';
 
 export const TARBALL_EXTENSION = '.tgz';
 
-export const TEARDOWN_COMMAND = 'pnpm run rm:gen';
+export const TEARDOWN_COMMAND = `pnpm remove ${this1}`;

@@ -6,7 +6,13 @@ import tsconfig from './tsconfig.json';
 export default defineConfig({
   plugins: [
     aliasTs(tsconfig as any),
-    exclude({ ignoreCoverageFiles: ['**/index.ts', '**/types.ts'] }),
+    exclude({
+      ignoreCoverageFiles: [
+        '**/index.ts',
+        '**/types.ts',
+        '**/fixtures/**/*',
+      ],
+    }),
   ],
   test: {
     bail: 10,
@@ -22,6 +28,8 @@ export default defineConfig({
       all: true,
       provider: 'v8',
     },
-    globalSetup: ['./vitest.config.setup.ts'],
+    // globalSetup: [
+    //   /* './vitest.config.setup.ts' */
+    // ],
   },
 });
