@@ -1,7 +1,6 @@
 export const FILE_ORIGIN = 'file';
 export const devKey = 'devDependencies';
 export const this1 = 'this-gen-1';
-export const depToSet = `${devKey}.${this1}`;
 export const EXPORT_KEYS = ['main', 'typings', 'module'];
 export const PATH_OUT_DIR = 'compilerOptions.outDir';
 export const DOT = './';
