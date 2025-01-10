@@ -1,4 +1,5 @@
-import { toString2 } from 'this1';
+// @ts-expect-error for build
+import { toString2 } from 'this-gen-1';
 
 describe('Covering the function "toString2" ', () => {
   const ERROR = '-Infinity';

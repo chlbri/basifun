@@ -1,5 +1,7 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { reFunction } from 'this1';
+
+// @ts-expect-error for build
+import { reFunction } from 'this-gen-1';
 
 describe('reFunction', () => {
   const obj = {

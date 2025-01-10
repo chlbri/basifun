@@ -1,6 +1,8 @@
 import type { Fn } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { partialCall, toString2 } from 'this1';
+
+// @ts-expect-error for build
+import { partialCall, toString2 } from 'this-gen-1';
 
 const add: Fn<[number, number], number> = (val1, val2) => val1 + val2;
 

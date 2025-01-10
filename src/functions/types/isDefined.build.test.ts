@@ -1,5 +1,7 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { isDefined } from 'this1';
+
+// @ts-expect-error for build
+import { isDefined } from 'this-gen-1';
 
 describe('isDefined', () => {
   const useTests = createTests(isDefined);

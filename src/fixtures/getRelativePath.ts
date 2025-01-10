@@ -1,0 +1,15 @@
+import type { Fn } from '@bemedev/types';
+import { relative } from 'node:path';
+
+type GetRelativePath_F = Fn<[string], string>;
+
+export const getRelativePath0: GetRelativePath_F = result => {
+  const split = result.split('\n');
+  const out1 = split.find(val => val.endsWith('.tgz'));
+
+  if (!out1) throw 'Not existed';
+
+  const out2 = relative(process.cwd(), out1);
+
+  return out2;
+};

@@ -22,5 +22,6 @@ export default defineConfig({
       all: true,
       provider: 'v8',
     },
+    globalSetup: ['./vitest.config.setup.ts'],
   },
 });
