@@ -70,7 +70,7 @@
     "posttest": "pnpm build-tests post:test",
     "posttest:watch": "pnpm run posttest",
     "posttest:coverage": "pnpm run posttest",
-    "pretest": "pnpm build-tests pre:test",
+    "pretest": "pnpm run build && pnpm build-tests pre:test",
     "pretest:watch": "pnpm run pretest",
     "pretest:coverage": "pnpm run pretest",
     "prettier": "prettier --write \"src/**/*.{ts,tsx}\"",
