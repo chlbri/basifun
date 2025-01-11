@@ -163,7 +163,7 @@ packages:
   '@bemedev/basicfunc@file:.pack/bemedev-basicfunc-0.0.1.tgz':
     resolution:
       {
-        integrity: sha512-s69Pxp0b+lGFx/lknN6Jt9m6IXfojXha2vaorzt6ijL2lD1VUL7lPhyE41IjgwdWLqw3MT4aiJu/gWKmG4V4MQ==,
+        integrity: sha512-Cg7oFoqJk3tND836/c4wIGNaComHZnHFvXgxSh6MFoub/1GvyteZrOiGxk7K8oGX/4ESD/SI/3kzHrJDjGqxKQ==,
         tarball: file:.pack/bemedev-basicfunc-0.0.1.tgz,
       }
     version: 0.0.1
