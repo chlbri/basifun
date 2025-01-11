@@ -1,7 +1,6 @@
 import type { NOmit } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
 
-// @ts-expect-error for build
 import { switchValue, toString2 } from 'this-gen-1';
 
 const useTests = useEach(switchValue);

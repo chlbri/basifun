@@ -1,6 +1,5 @@
 import { createTests } from '@bemedev/vitest-extended';
 
-// @ts-expect-error for build
 import { isDefined } from 'this-gen-1';
 
 describe('isDefined', () => {
