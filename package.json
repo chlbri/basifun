@@ -20,11 +20,39 @@
       "types": "./lib/index.d.ts"
     },
     "./*": {
-      "default": "./lib/*.js",
-      "import": "./lib/*.js",
-      "node": "./lib/*.cjs",
-      "require": "./lib/*.cjs",
-      "types": "./lib/*.d.ts"
+      "default": "./lib/functions/*.js",
+      "import": "./lib/functions/*.js",
+      "node": "./lib/functions/*.cjs",
+      "require": "./lib/functions/*.cjs",
+      "types": "./lib/functions/*.d.ts"
+    },
+    "./common/*": {
+      "default": "./lib/functions/common/*.js",
+      "import": "./lib/functions/common/*.js",
+      "node": "./lib/functions/common/*.cjs",
+      "require": "./lib/functions/common/*.cjs",
+      "types": "./lib/functions/common/*.d.ts"
+    },
+    "./numbers/*": {
+      "default": "./lib/functions/numbers/*.js",
+      "import": "./lib/functions/numbers/*.js",
+      "node": "./lib/functions/numbers/*.cjs",
+      "require": "./lib/functions/numbers/*.cjs",
+      "types": "./lib/functions/numbers/*.d.ts"
+    },
+    "./strings/*": {
+      "default": "./lib/functions/strings/*.js",
+      "import": "./lib/functions/strings/*.js",
+      "node": "./lib/functions/strings/*.cjs",
+      "require": "./lib/functions/strings/*.cjs",
+      "types": "./lib/functions/strings/*.d.ts"
+    },
+    "./types/*": {
+      "default": "./lib/functions/types/*.js",
+      "import": "./lib/functions/types/*.js",
+      "node": "./lib/functions/types/*.cjs",
+      "require": "./lib/functions/types/*.cjs",
+      "types": "./lib/functions/types/*.d.ts"
     },
     "./package.json": "./package.json"
   },
