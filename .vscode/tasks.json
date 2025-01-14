@@ -88,7 +88,7 @@
     // #endregion
 
     {
-      "label": "pnpm:test:watch",
+      "label": "pnpm:test",
       "type": "npm",
       "presentation": {
         "echo": true,
@@ -100,7 +100,7 @@
         "close": true
       },
       "group": "test",
-      "script": "test:watch",
+      "script": "test",
       "isBackground": false,
       "detail": "Test the package",
       "dependsOn": "pnpm:lint",
