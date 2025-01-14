@@ -88,7 +88,7 @@
   },
   "scripts": {
     "build": "pnpm run rm:lib && pnpm run rollup",
-    "ci": "pnpm run config:off && pnpm run lint && pnpm run test && pnpm run prettier && pnpm run pretest",
+    "ci": "pnpm run config:off && pnpm run lint && pnpm run test && pnpm run prettier && pnpm run p-q",
     "config": "pnpm install",
     "config:off": "pnpm run config --offline",
     "dep:off": "pnpm run dep --offline",
