@@ -1,28 +1,25 @@
-// @ts-expect-error for build
-import { toString2 } from 'this-gen-1';
+import { this1 } from '@bemedev/build-tests/constants';
+import { t } from '@bemedev/types';
+import { createTests } from '@bemedev/vitest-extended';
+import type { toString2 as func } from './toString2';
+
+const toString2 = t.anify<typeof func>();
+
+const useTests = createTests<typeof func>(toString2, () =>
+  import(this1).then(({ toString2 }) => toString2),
+);
 
 describe('Covering the function "toString2" ', () => {
-  const ERROR = '-Infinity';
-
-  describe('#1 => Errors', () => {
-    test('#1 => Throws -Infinity', () => {
-      const func = () => toString2(0, 1);
-      expect(func).toThrowError(ERROR);
-    });
-
-    test('#2 => Throws -Infinity', () => {
-      const func = () => toString2(1, 0);
-      expect(func).toThrowError(ERROR);
-    });
-
-    test('#3 => Throws -Infinity', () => {
-      const func = () => toString2(0, 0);
-      expect(func).toThrowError(ERROR);
-    });
-  });
-
-  test('#2 => No error', () => {
-    const func = () => toString2(1, 1);
-    expect(func).not.toThrow();
-  });
+  useTests(
+    {
+      invite: 'For str = "" and len = 1',
+      parameters: [1, 1],
+      expected: '1',
+    },
+    {
+      invite: 'For str = "" and len = 10',
+      parameters: [1, 10],
+      expected: '01',
+    },
+  );
 });

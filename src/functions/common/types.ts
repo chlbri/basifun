@@ -9,3 +9,7 @@ export type SwitchValue_F = <T>(params: {
 export type Asyncfy_F = <P extends any[], R = any>(
   fn: Fn<P, R>,
 ) => Fn<P, Promise<R>>;
+
+export type ObjectToArray_F = <T extends Record<string, any>>(
+  object: T,
+) => T[string][];
