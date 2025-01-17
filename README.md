@@ -1,6 +1,7 @@
 # @bemedev/basicfunc
 
-Collection de fonctions TypeScript de base pour simplifier le développement.
+Collection de fonctions TypeScript de base pour simplifier le
+développement.
 
 ## Prérequis
 
@@ -17,7 +18,9 @@ npm install @bemedev/basicfunc
 
 ## Description
 
-Cette bibliothèque fournit un ensemble de fonctions TypeScript utilitaires conçues pour améliorer la productivité des développeurs. Elle est construite avec TypeScript pour garantir la sécurité des types.
+Cette bibliothèque fournit un ensemble de fonctions TypeScript utilitaires
+conçues pour améliorer la productivité des développeurs. Elle est
+construite avec TypeScript pour garantir la sécurité des types.
 
 ## Caractéristiques
 
@@ -29,7 +32,7 @@ Cette bibliothèque fournit un ensemble de fonctions TypeScript utilitaires con�
 ## Utilisation
 
 ```typescript
-import { /* functions */ } from '@bemedev/basicfunc';
+import {} from /* functions */ '@bemedev/basicfunc';
 
 // Utilisez les fonctions importées dans votre code
 ```
@@ -44,6 +47,4 @@ chlbri (bri_lvi@icloud.com)
 
 ## Liens
 
-- [Documentation](https://bemedev.vercel.app)
-- [GitHub](https://github.com/chlbri/basifunc)
-
+- [Documentation](https://github.com/chlbri/basifunc)
