@@ -43,7 +43,9 @@ MIT
 
 ## Auteur
 
-chlbri (bri_lvi@icloud.com)
+Charles-Lévi BRI
+
+[My github](https://github.com/chlbri?tab=repositories)
 
 ## Liens
 
