@@ -32,7 +32,7 @@ construite avec TypeScript pour garantir la sécurité des types.
 ## Utilisation
 
 ```typescript
-import {} from /* functions */ '@bemedev/basicfunc';
+import { ...} from  '@bemedev/basicfunc';
 
 // Utilisez les fonctions importées dans votre code
 ```
