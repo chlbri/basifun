@@ -20,3 +20,24 @@ export type PartialCallO_F = <T extends object, U extends T, R>(
   f: Fn<[arg: U], R>,
   headArgs?: T,
 ) => Fn<[remainArgs: Omit<U, keyof T>], R>;
+
+export type CallBackError = (err: any) => void;
+
+export type CallBackResult<T = any> = (err: any, result: T) => void;
+
+export type Callback = CallBackError | CallBackResult;
+
+type GetResult<Cb extends Callback> = Parameters<Cb>['length'] extends 2
+  ? Parameters<Cb>[1]
+  : void;
+
+type CbParams = [...any[], Callback];
+
+export type ResultFrom<T> = T extends [
+  ...infer Args extends any[],
+  infer Cb extends Callback,
+]
+  ? Fn<Args, Promise<GetResult<Cb>>>
+  : never;
+
+export type Promisify_F = <T extends CbParams>(fn: Fn<T>) => ResultFrom<T>;

@@ -28,6 +28,11 @@ export default defineConfig({
       all: true,
       provider: 'v8',
     },
+    typecheck: {
+      enabled: true,
+      only: false,
+      ignoreSourceErrors: true,
+    },
     // globalSetup: [
     //   /* './vitest.config.setup.ts' */
     // ],
