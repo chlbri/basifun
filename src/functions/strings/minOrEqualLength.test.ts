@@ -1,6 +1,6 @@
 import { constructLength } from './length.fixture';
 import { minOrEqualLength } from './minOrEqualLength';
-import { multiChar } from './multipleChar';
+import { multiChar } from './multiChar';
 
 describe('minOrEqualLength', () => {
   const toError = <T extends number>(min: T, value: string) => {

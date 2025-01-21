@@ -1,6 +1,6 @@
 import { inRangeExclusive } from './inRangeExclusive';
 import { constructLength } from './length.fixture';
-import { multiChar } from './multipleChar';
+import { multiChar } from './multiChar';
 
 describe('exactLength', () => {
   const constructTests = constructLength(

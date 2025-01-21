@@ -1,6 +1,6 @@
 import { exactLength } from './exactLength';
 import { constructLength } from './length.fixture';
-import { multiChar } from './multipleChar';
+import { multiChar } from './multiChar';
 
 describe('exactLength', () => {
   const toError = <T extends number>(exact: T, value: string) => {

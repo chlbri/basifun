@@ -1,6 +1,6 @@
 import { constructLength } from './length.fixture';
 import { maxOrEqualLength } from './maxOrEqualLength';
-import { multiChar } from './multipleChar';
+import { multiChar } from './multiChar';
 
 describe('maxOrEqualLength', () => {
   const toError = <T extends number>(max: T, value: string) => {
