@@ -62,38 +62,14 @@
         "instanceLimit": 1
       }
     },
-    // #region No over linting
-    // {
-    //   "label": "pnpm:lint:watch",
-    //   "type": "npm",
-    //   "presentation": {
-    //     "echo": true,
-    //     "reveal": "silent",
-    //     "focus": false,
-    //     "panel": "new",
-    //     "group": "test",
-    //     "clear": true,
-    //     "close": true
-    //   },
-    //   "group": "test",
-    //   "script": "lint:watch",
-    //   "isBackground": false,
-    //   "detail": "Lint the package",
-    //   "dependsOn": "pnpm:lint",
-    //   "runOptions": {
-    //     "runOn": "folderOpen",
-    //     "instanceLimit": 1
-    //   }
-    // },
-    // #endregion
-
+    // #region Test
     {
       "label": "pnpm:test:watch",
       "type": "npm",
       "presentation": {
         "echo": true,
-        "reveal": "always",
-        "focus": true,
+        "reveal": "silent",
+        "focus": false,
         "panel": "new",
         "group": "test",
         "clear": true,
@@ -102,12 +78,13 @@
       "group": "test",
       "script": "test:watch",
       "isBackground": false,
-      "detail": "Test the package",
+      "detail": "Lint the package",
       "dependsOn": "pnpm:lint",
       "runOptions": {
         "runOn": "folderOpen",
         "instanceLimit": 1
       }
     }
+    // #endregion
   ]
 }
