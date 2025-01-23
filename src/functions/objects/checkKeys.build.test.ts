@@ -3,15 +3,17 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { checkKeys as func } from './checkKeys';
 
-describe('Check Keys', () => {
-  const checkKeys = t.anify<typeof func>();
+const checkKeys = t.anify<typeof func>();
 
-  const useTests = createTests(checkKeys, () =>
+const { success: useTests } = createTests.withImplementation(checkKeys, {
+  instanciation: () =>
     import(`${this1}/objects/checkKeys`).then(
       ({ checkKeys }) => checkKeys,
     ),
-  );
-
+  name: 'checkKeys',
+});
+describe(
+  'Check Keys',
   useTests(
     {
       invite: 'No keys to check 1',
@@ -43,5 +45,5 @@ describe('Check Keys', () => {
       parameters: [{ data: 'user', length: 2 }, 'data', 'length'],
       expected: true,
     },
-  );
-});
+  ),
+);

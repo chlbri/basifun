@@ -1,9 +1,11 @@
+import type { LengthOf } from '@bemedev/types';
+
 export type StringLength<
   T extends string,
   Counter extends number[] = [],
 > = T extends `${string}${infer Tail}`
   ? StringLength<Tail, [...Counter, 0]>
-  : Counter['length'];
+  : LengthOf<Counter>;
 
 export type StringCompare<
   First extends number,
@@ -11,88 +13,88 @@ export type StringCompare<
   Counter extends number[] = [],
 > = First extends Second
   ? 0
-  : Counter['length'] extends First
+  : LengthOf<Counter> extends First
     ? -1
-    : Counter['length'] extends Second
+    : LengthOf<Counter> extends Second
       ? 1
       : StringCompare<First, Second, [...Counter, 0]>;
 
-export type ExactLength<T extends string, Exact extends number> =
+export type ExactLength<Exact extends number, T extends string> =
   StringCompare<StringLength<T>, Exact> extends 0 ? T : never;
 
-export type ExactLength_F = <T extends string, Exact extends number>(
+export type ExactLength_F = <Exact extends number, T extends string>(
   exact: Exact,
-  str: ExactLength<T, Exact>,
-) => ExactLength<T, Exact>;
+  str: ExactLength<Exact, T>,
+) => ExactLength<Exact, T>;
 
-export type MaxLength<T extends string, Max extends number> =
+export type MaxLength<Max extends number, T extends string> =
   StringCompare<StringLength<T>, Max> extends -1 ? T : never;
 
-export type MaxLength_F = <T extends string, Max extends number>(
+export type MaxLength_F = <Max extends number, T extends string>(
   min: Max,
-  str: MaxLength<T, Max>,
-) => MaxLength<T, Max>;
+  str: MaxLength<Max, T>,
+) => MaxLength<Max, T>;
 
-export type MaxOrEqualLength<T extends string, Max extends number> =
-  | MaxLength<T, Max>
-  | ExactLength<T, Max>;
+export type MaxOrEqualLength<Max extends number, T extends string> =
+  | MaxLength<Max, T>
+  | ExactLength<Max, T>;
 
-export type MaxOrEqualLength_F = <T extends string, Max extends number>(
+export type MaxOrEqualLength_F = <Max extends number, T extends string>(
   min: Max,
-  str: MaxOrEqualLength<T, Max>,
-) => MaxOrEqualLength<T, Max>;
+  str: MaxOrEqualLength<Max, T>,
+) => MaxOrEqualLength<Max, T>;
 
-export type MinLength<T extends string, Min extends number> =
+export type MinLength<Min extends number, T extends string> =
   StringCompare<StringLength<T>, Min> extends 1 ? T : never;
 
-export type MinLength_F = <T extends string, Min extends number>(
+export type MinLength_F = <Min extends number, T extends string>(
   min: Min,
-  str: MinLength<T, Min>,
-) => MinLength<T, Min>;
+  str: MinLength<Min, T>,
+) => MinLength<Min, T>;
 
-export type MinOrEqualLength<T extends string, Min extends number> =
-  | MinLength<T, Min>
-  | ExactLength<T, Min>;
+export type MinOrEqualLength<Min extends number, T extends string> =
+  | MinLength<Min, T>
+  | ExactLength<Min, T>;
 
-export type MinOrEqualLength_F = <T extends string, Min extends number>(
+export type MinOrEqualLength_F = <Min extends number, T extends string>(
   min: Min,
-  str: MinOrEqualLength<T, Min>,
-) => MinOrEqualLength<T, Min>;
+  str: MinOrEqualLength<Min, T>,
+) => MinOrEqualLength<Min, T>;
 
 export type InRangeExclusive<
-  T extends string,
   Min extends number,
   Max extends number,
-> = MinLength<T, Min> & MaxLength<T, Max>;
+  T extends string,
+> = MinLength<Min, T> & MaxLength<Max, T>;
 
 export type InRangeExclusive_F = <
-  T extends string,
   Min extends number,
   Max extends number,
+  T extends string,
 >(
   min: Min,
   max: Max,
-  str: InRangeExclusive<T, Min, Max>,
-) => InRangeExclusive<T, Min, Max>;
+  str: InRangeExclusive<Min, Max, T>,
+) => InRangeExclusive<Min, Max, T>;
 
 export type InRangeInclusive<
-  T extends string,
   Min extends number,
   Max extends number,
-> = MinOrEqualLength<T, Min> & MaxOrEqualLength<T, Max>;
+  T extends string,
+> = MinOrEqualLength<Min, T> & MaxOrEqualLength<Max, T>;
 
 export type InRangeInclusive_F = <
-  T extends string,
   Min extends number,
   Max extends number,
+  T extends string,
 >(
   min: Min,
   max: Max,
-  str: InRangeInclusive<T, Min, Max>,
-) => InRangeInclusive<T, Min, Max>;
+  str: InRangeInclusive<Min, Max, T>,
+) => InRangeInclusive<Min, Max, T>;
 
 export type MultiChar_F = <T extends string>(
-  char: ExactLength<T, 1>,
+  char: ExactLength<1, T>,
   count: number,
   separator?: string,
 ) => string;

@@ -5,48 +5,41 @@ import { partialCall } from '../functions';
 export type Arg = { invite: string; value: string };
 type Args = { errors: Arg[]; success: Arg[] };
 
-type _ConstructLength = <P extends any[], R = any>(
+type _ConstructLength = <P extends any[], R extends string>(
   fn: Fn<[...P, R], R>,
-  error?: Fn<[...P, string], string | undefined>,
+  error: Fn<[...P, string], string | undefined>,
   ...params: P
 ) => (params: Args) => void;
 
-const _constructLength: _ConstructLength = (
-  fn,
-  error = () => undefined,
-  ...params
-) => {
+const _constructLength: _ConstructLength = (fn, error, ...params) => {
+  // #region Config
   const actual: Fn<[string], string> = partialCall(fn as any, ...params);
+  const toError = (str: string) => error(...params, str);
+  const { success, fails } = createTests(actual, toError);
+  // #endregion
 
-  const out = ({ errors, success }: Args) => {
-    describe('#1 => Errors', () => {
-      errors.forEach(({ invite, value }) => {
-        test(invite, () => {
-          expect(() => actual(value)).toThrowError(
-            error(...params, value),
-          );
-        });
-      });
-    });
+  const out = ({ errors: _errors, success: _success }: Args) => {
+    const tests = _success.map(({ invite, value }) => ({
+      invite,
+      parameters: value,
+      expected: value,
+    }));
 
-    describe('#2 => Success', () => {
-      const useTests = createTests(actual);
-      const tests = success.map(({ invite, value }) => ({
-        invite,
-        parameters: value,
-        expected: value,
-      }));
+    const errors = _errors.map(({ invite, value }) => ({
+      invite,
+      parameters: value,
+    }));
 
-      useTests(...tests);
-    });
+    describe('#1 => Errors', fails(...errors));
+    describe('#2 => Success', success(...tests));
   };
 
   return out;
 };
 
-type ConstructLength = <P extends any[], R = any>(
+type ConstructLength = <P extends any[], R extends string>(
   fn: Fn<[...P, R], R>,
-  error?: Fn<[...P, string], string | undefined>,
+  error: Fn<[...P, string], string | undefined>,
 ) => (...params: P) => (params: Args) => void;
 
 export const constructLength: ConstructLength = (fn, error) => {

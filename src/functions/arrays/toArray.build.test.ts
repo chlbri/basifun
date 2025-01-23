@@ -3,15 +3,18 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { toArray as func } from './toArray';
 
-describe('toArray', () => {
-  const toArray = t.anify<typeof func>();
-  const useTests = createTests(toArray, () =>
+const toArray = t.anify<typeof func>();
+
+const { success: useTests } = createTests.withImplementation(toArray, {
+  instanciation: () =>
     import(`${this1}/arrays/toArray`).then(({ toArray }) => {
       console.log(toArray);
       return toArray;
     }),
-  );
-
+  name: 'toArray',
+});
+describe(
+  'toArray',
   useTests(
     {
       invite: 'No value',
@@ -34,5 +37,5 @@ describe('toArray', () => {
       ],
       expected: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     },
-  );
-});
+  ),
+);

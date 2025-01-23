@@ -11,7 +11,11 @@ export type Refunction_F = <
   fn: FnKey,
 ) => T[FnKey];
 
-export type PartialCall_F = <T extends ArrayR, U extends ArrayR, R>(
+export type PartialCall_F = <
+  T extends ArrayR = ArrayR,
+  U extends ArrayR = ArrayR,
+  R = any,
+>(
   f: Fn<[...T, ...U], R>,
   ...headArgs: T
 ) => (...tailArgs: U) => R;

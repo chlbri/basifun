@@ -10,6 +10,8 @@ describe('maxLength', () => {
 
   const constructTests = constructLength(maxLength, toError);
 
+  maxLength(1, '');
+
   describe('#1 => max: 2', () => {
     const useTests = constructTests(2);
 

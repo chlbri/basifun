@@ -29,3 +29,6 @@ jobs:
 
       - name: Test
         run: pnpm run test
+
+      - name: Test cleanup
+        run: pnpm run test:cleanup

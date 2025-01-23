@@ -10,6 +10,7 @@ export default defineConfig({
       ignoreCoverageFiles: [
         '**/index.ts',
         '**/types.ts',
+        '**/*.fixture.ts',
         '**/fixtures/**/*',
       ],
     }),
@@ -33,8 +34,6 @@ export default defineConfig({
       only: false,
       ignoreSourceErrors: true,
     },
-    // globalSetup: [
-    //   /* './vitest.config.setup.ts' */
-    // ],
+    globalSetup: ['./vitest.global.ts'],
   },
 });

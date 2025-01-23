@@ -1,9 +1,9 @@
 import { createTests } from '@bemedev/vitest-extended';
 import { toArray } from './toArray';
 
-describe('toArray', () => {
-  const useTests = createTests(toArray);
-
+const { success: useTests } = createTests(toArray);
+describe(
+  'toArray',
   useTests(
     {
       invite: 'No value',
@@ -26,5 +26,5 @@ describe('toArray', () => {
       ],
       expected: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
     },
-  );
-});
+  ),
+);
