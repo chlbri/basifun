@@ -1,6 +1,6 @@
-import type { MaxLength_F } from './types';
+import type { MaxOrEqualLength_F } from './types';
 
-export const maxOrEqualLength: MaxLength_F = (max, str) => {
+export const maxOrEqualLength: MaxOrEqualLength_F = (max, str) => {
   if (str.length > max) {
     throw new Error(`"${str}" is greater than ${max}`);
   }

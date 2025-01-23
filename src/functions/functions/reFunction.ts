@@ -1,11 +1,10 @@
-import { t } from '@bemedev/types';
+import { t, type Fn } from '@bemedev/types';
 import type { Refunction_F } from './types';
 
 export const reFunction: Refunction_F = (object, fn) => {
   const _fn = object[fn];
   const out: any = t.anify((...args: any) =>
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-function-type
-    (_fn as Function).bind(object)(...args),
+    (_fn as Fn).bind(object)(...args),
   );
 
   return out;

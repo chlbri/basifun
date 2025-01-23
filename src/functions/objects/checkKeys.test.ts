@@ -1,9 +1,9 @@
 import { createTests } from '@bemedev/vitest-extended';
 import { checkKeys } from './checkKeys';
 
-describe('Check Keys', () => {
-  const useTests = createTests(checkKeys);
-
+const { success: useTests } = createTests(checkKeys);
+describe(
+  'Check Keys',
   useTests(
     {
       invite: 'No keys to check 1',
@@ -35,5 +35,5 @@ describe('Check Keys', () => {
       parameters: [{ data: 'user', length: 2 }, 'data', 'length'],
       expected: true,
     },
-  );
-});
+  ),
+);

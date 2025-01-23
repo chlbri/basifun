@@ -1,4 +1,4 @@
-export type ArrayR = readonly any[];
+export type ArrayR = readonly any[] | any[];
 
 // #region SubType
 type FilterFlags<Base, Condition> = {
@@ -15,3 +15,20 @@ export type SubType<Base extends object, Condition> = Pick<
   AllowedNames<Base, Condition>
 >;
 // #endregion
+
+export type ToPrimitive<T> = T extends string
+  ? string
+  : T extends number
+    ? number
+    : T extends boolean
+      ? boolean
+      : T extends object
+        ? object
+        : any;
+
+export type ToPrimitiveTuple<T extends any[] | ArrayR> = T extends [
+  infer U,
+  ...infer R,
+]
+  ? [ToPrimitive<U>, ...ToPrimitiveTuple<R>]
+  : [];

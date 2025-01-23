@@ -8,3 +8,5 @@ export const switchValue: SwitchValue_F = ({
   const out = condition ? first : second;
   return out;
 };
+
+export const switchV = switchValue;

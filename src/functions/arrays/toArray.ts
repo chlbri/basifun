@@ -1,13 +1,18 @@
+import { switchV } from '../common';
 import { isDefined } from '../types';
 import { isArray } from './isArray';
 import type { ToArray_F } from './types';
 
 export const toArray: ToArray_F = obj => {
-  if (isArray(obj)) {
-    return obj;
-  } else {
-    const isUndefined = !isDefined(obj);
-    if (isUndefined) return [] as any;
-    return [obj];
-  }
+  const out = switchV({
+    condition: isArray(obj),
+    first: obj,
+    second: switchV({
+      condition: isDefined(obj),
+      first: [obj],
+      second: [],
+    }),
+  });
+
+  return out;
 };
