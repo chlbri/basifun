@@ -3,6 +3,16 @@
 <br/>
 <br/>
 
+## [0.1.1] 2025/01/21
+
+### Added
+
+- Added utility functions for string manipulation.
+- Added isAsync function
+
+<br/>
+<br/>
+
 ## [0.0.2] 2025/01/21
 
 ### Added
