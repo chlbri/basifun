@@ -27,8 +27,8 @@ importers:
         specifier: ^0.0.2
         version: 0.0.2(glob@11.0.1)(vitest@3.0.4(@types/node@22.10.10)(tsx@4.19.2))
       '@bemedev/vitest-extended':
-        specifier: ^1.1.0
-        version: 1.1.0(vitest@3.0.4(@types/node@22.10.10)(tsx@4.19.2))
+        specifier: ^1.1.2
+        version: 1.1.2(vitest@3.0.4(@types/node@22.10.10)(tsx@4.19.2))
       '@eslint/eslintrc':
         specifier: ^3.2.0
         version: 3.2.0
@@ -213,10 +213,10 @@ packages:
       glob: ^10.3.15
       vitest: ^1.5.2
 
-  '@bemedev/vitest-extended@1.1.0':
+  '@bemedev/vitest-extended@1.1.2':
     resolution:
       {
-        integrity: sha512-2jWPG4tcqyyTQtuPEjWRsJZTe3vwUEdGHOG3Dtxhio8nDfG2AYkCQ6VWfnFtdd166VdbDKPzFDH6MCVeMs1/vw==,
+        integrity: sha512-K/z2OOFeBtRw9ygNTy01OWfF/8Z+ljmQNM0Zd7LroK+I37IEBiGl/ifC9R1tqktVwROBaOfebLcIk6z1OmPZJg==,
       }
     peerDependencies:
       vitest: ^2.1.8
@@ -3040,7 +3040,7 @@ snapshots:
       glob: 11.0.1
       vitest: 3.0.4(@types/node@22.10.10)(tsx@4.19.2)
 
-  '@bemedev/vitest-extended@1.1.0(vitest@3.0.4(@types/node@22.10.10)(tsx@4.19.2))':
+  '@bemedev/vitest-extended@1.1.2(vitest@3.0.4(@types/node@22.10.10)(tsx@4.19.2))':
     dependencies:
       '@bemedev/sleep': 0.1.2
       '@bemedev/types': 0.1.3
