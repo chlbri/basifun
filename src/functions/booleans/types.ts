@@ -1,5 +1,5 @@
 export type _SwitchValue_F = <T>(params: {
   condition?: boolean;
-  first: T;
-  second: T;
+  truthy: T;
+  falsy: T;
 }) => T;
