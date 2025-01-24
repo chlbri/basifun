@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/basicfunc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -26,12 +26,40 @@
       "require": "./lib/functions/arrays/*.cjs",
       "default": "./lib/functions/arrays/*.js"
     },
-    "./common/*": {
+    "./array": {
+      "types": "./lib/functions/arrays/index.d.ts",
+      "import": "./lib/functions/arrays/index.js",
+      "node": "./lib/functions/arrays/index.cjs",
+      "require": "./lib/functions/arrays/index.cjs",
+      "default": "./lib/functions/arrays/index.js"
+    },
+    "./booleans/*": {
+      "types": "./lib/functions/booleans/*.d.ts",
+      "import": "./lib/functions/booleans/*.js",
+      "node": "./lib/functions/booleans/*.cjs",
+      "require": "./lib/functions/booleans/*.cjs",
+      "default": "./lib/functions/booleans/*.js"
+    },
+    "./boolean": {
+      "types": "./lib/functions/booleans/index.d.ts",
+      "import": "./lib/functions/booleans/index.js",
+      "node": "./lib/functions/booleans/index.cjs",
+      "require": "./lib/functions/booleans/index.cjs",
+      "default": "./lib/functions/booleans/index.js"
+    },
+    "./commons/*": {
       "types": "./lib/functions/common/*.d.ts",
       "import": "./lib/functions/common/*.js",
       "node": "./lib/functions/common/*.cjs",
       "require": "./lib/functions/common/*.cjs",
       "default": "./lib/functions/common/*.js"
+    },
+    "./common": {
+      "types": "./lib/functions/common/index.d.ts",
+      "import": "./lib/functions/common/index.js",
+      "node": "./lib/functions/common/index.cjs",
+      "require": "./lib/functions/common/index.cjs",
+      "default": "./lib/functions/common/index.js"
     },
     "./numbers/*": {
       "types": "./lib/functions/numbers/*.d.ts",
@@ -40,12 +68,26 @@
       "require": "./lib/functions/numbers/*.cjs",
       "default": "./lib/functions/numbers/*.js"
     },
+    "./number": {
+      "types": "./lib/functions/numbers/index.d.ts",
+      "import": "./lib/functions/numbers/index.js",
+      "node": "./lib/functions/numbers/index.cjs",
+      "require": "./lib/functions/numbers/index.cjs",
+      "default": "./lib/functions/numbers/index.js"
+    },
     "./objects/*": {
       "types": "./lib/functions/objects/*.d.ts",
       "import": "./lib/functions/objects/*.js",
       "node": "./lib/functions/objects/*.cjs",
       "require": "./lib/functions/objects/*.cjs",
       "default": "./lib/functions/objects/*.js"
+    },
+    "./object": {
+      "types": "./lib/functions/objects/index.d.ts",
+      "import": "./lib/functions/objects/index.js",
+      "node": "./lib/functions/objects/index.cjs",
+      "require": "./lib/functions/objects/index.cjs",
+      "default": "./lib/functions/objects/index.js"
     },
     "./strings/*": {
       "types": "./lib/functions/strings/*.d.ts",
@@ -54,12 +96,26 @@
       "require": "./lib/functions/strings/*.cjs",
       "default": "./lib/functions/strings/*.js"
     },
+    "./string": {
+      "types": "./lib/functions/strings/index.d.ts",
+      "import": "./lib/functions/strings/index.js",
+      "node": "./lib/functions/strings/index.cjs",
+      "require": "./lib/functions/strings/index.cjs",
+      "default": "./lib/functions/strings/index.js"
+    },
     "./types/*": {
       "types": "./lib/functions/types/*.d.ts",
       "import": "./lib/functions/types/*.js",
       "node": "./lib/functions/types/*.cjs",
       "require": "./lib/functions/types/*.cjs",
       "default": "./lib/functions/types/*.js"
+    },
+    "./type": {
+      "types": "./lib/functions/types/index.d.ts",
+      "import": "./lib/functions/types/index.js",
+      "node": "./lib/functions/types/index.cjs",
+      "require": "./lib/functions/types/index.cjs",
+      "default": "./lib/functions/types/index.js"
     },
     "./package.json": "./package.json"
   },

@@ -1,6 +1,6 @@
 import type { Fn } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { toString2 } from '../numbers/toString2';
+import { toStringFlat } from '../numbers/toStringFlat';
 import { partialCallO } from './partialCallO';
 
 const add: Fn<[{ valN: number; valS: string }], string> = ({
@@ -16,7 +16,7 @@ describe('#1 => same', () => {
     const len = params.length;
 
     const testArgs = params.map(([valN, valS, expected], index) => {
-      const invite = `#${toString2(index + 1, len)} => ${valS} + ${valN} -> ${expected}`;
+      const invite = `#${toStringFlat(index + 1, len)} => ${valS} + ${valN} -> ${expected}`;
 
       const parameters = { valN, valS };
       return { invite, parameters, expected };
@@ -43,7 +43,7 @@ describe('#2 => reduced', () => {
     const len = params.length;
 
     const testArgs = params.map(([valN, expected], index) => {
-      const invite = `#${toString2(index + 1, len)} => ${valS} + ${valN} -> ${expected}`;
+      const invite = `#${toStringFlat(index + 1, len)} => ${valS} + ${valN} -> ${expected}`;
 
       const parameters = { valN };
       return { invite, parameters, expected };

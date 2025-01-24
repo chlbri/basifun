@@ -1,5 +1,5 @@
 import type { AllowedNames, ArrayR, SubType } from '#types';
-import { type Fn } from '@bemedev/types';
+import type { Fn } from '@bemedev/types';
 
 type KeysFn<T extends object = object> = keyof SubType<T, Fn>;
 
@@ -45,3 +45,7 @@ export type ResultFrom<T> = T extends [
   : never;
 
 export type Promisify_F = <T extends CbParams>(fn: Fn<T>) => ResultFrom<T>;
+
+export type GenericFunction_F = <P extends any[], R = any>(
+  fn: Fn<P, R>,
+) => (...params: P) => R;

@@ -1,6 +1,6 @@
 import type { Fn } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
-import { toString2 } from '../numbers/toString2';
+import { toStringFlat } from '../numbers/toStringFlat';
 import { partialCall } from './partialCall';
 
 const add: Fn<[number, number], number> = (val1, val2) => val1 + val2;
@@ -13,7 +13,7 @@ describe('#1 => same', () => {
     const len = params.length;
 
     const testArgs = params.map(([arg1, arg2, expected], index) => {
-      const invite = `#${toString2(index + 1, len)} => ${arg1} + ${arg2} -> ${expected}`;
+      const invite = `#${toStringFlat(index + 1, len)} => ${arg1} + ${arg2} -> ${expected}`;
       return { invite, parameters: [arg1, arg2], expected };
     }) satisfies Parameters<typeof _useTests>;
 
@@ -38,7 +38,7 @@ describe('#2 => reduced', () => {
     const len = params.length;
 
     const testArgs = params.map(([parameters, expected], index) => {
-      const invite = `#${toString2(index + 1, len)} => 10 + ${parameters} -> ${expected}`;
+      const invite = `#${toStringFlat(index + 1, len)} => 10 + ${parameters} -> ${expected}`;
       return { invite, parameters, expected };
     }) satisfies Parameters<typeof _useTests>;
 

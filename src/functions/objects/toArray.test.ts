@@ -1,5 +1,5 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { genericFunction } from '../strings';
+import { genericFunction } from '../functions';
 import { objectToArray } from './toArray';
 
 const { success: useTests } = createTests(objectToArray);

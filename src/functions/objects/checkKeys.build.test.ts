@@ -7,11 +7,10 @@ const checkKeys = t.anify<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(checkKeys, {
   instanciation: () =>
-    import(`${this1}/objects/checkKeys`).then(
-      ({ checkKeys }) => checkKeys,
-    ),
+    import(`${this1}/object`).then(({ checkKeys }) => checkKeys),
   name: 'checkKeys',
 });
+
 describe(
   'Check Keys',
   useTests(

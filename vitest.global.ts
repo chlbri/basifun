@@ -13,7 +13,6 @@ export const setup = async () => {
 export const teardown = () => {
   if (env.onlyTeardown) {
     cleanup();
-    sh.exec('pnpm run p-q');
   }
   env.onlyTeardown = false;
 };
