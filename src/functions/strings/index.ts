@@ -1,5 +1,4 @@
 export * from './exactLength';
-export * from './generic';
 export * from './inRangeExclusive';
 export * from './inRangeInclusive';
 export * from './maxLength';

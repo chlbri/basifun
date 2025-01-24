@@ -3,7 +3,17 @@
 <br/>
 <br/>
 
-## [0.1.1] 2025/01/21
+## [0.1.2] 2025/01/24 06:13
+
+### Fixed
+
+- Better sorting inside folders
+- Better package.json exports
+
+<br/>
+<br/>
+
+## [0.1.1] 2025/01/23
 
 ### Added
 

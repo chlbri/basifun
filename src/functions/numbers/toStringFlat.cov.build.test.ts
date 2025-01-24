@@ -1,20 +1,23 @@
 import { this1 } from '@bemedev/build-tests/constants';
 import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
-import type { toString2 as func } from './toString2';
+import type { toStringFlat as func } from './toStringFlat';
 
-const toString2 = t.anify<typeof func>();
+const toStringFlat = t.anify<typeof func>();
 
-const { success: useTests } = createTests.withImplementation<typeof func>(
-  toString2,
+const { success: useTests } = createTests.withImplementation(
+  toStringFlat,
   {
-    instanciation: () => import(this1).then(({ toString2 }) => toString2),
-    name: 'toString2',
+    instanciation: () =>
+      import(`${this1}/numbers/toStringFlat`).then(
+        ({ toStringFlat }) => toStringFlat,
+      ),
+    name: 'toStringFlat',
   },
 );
 
 describe(
-  'Covering the function "toString2" ',
+  'Covering the function "toStringFlat" ',
   useTests(
     {
       invite: 'For str = "" and len = 1',

@@ -1,7 +1,7 @@
 import { log10 } from './log10';
-import type { ToString2_F } from './types';
+import type { ToStringFlat_F } from './types';
 
-export const toString2: ToString2_F = (_value, _len) => {
+export const toStringFlat: ToStringFlat_F = (_value, _len) => {
   const check = _value < 1 || _len < 1;
   if (check) throw new Error('-Infinity');
 

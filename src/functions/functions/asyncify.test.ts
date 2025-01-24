@@ -1,5 +1,5 @@
 import { createTests } from '@bemedev/vitest-extended';
-import { isArray } from '../arrays';
+import { isArray } from '../arrays/isArray';
 import { asyncfy } from './asyncify';
 
 describe('Asyncify', () => {
