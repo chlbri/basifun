@@ -6,8 +6,8 @@ import type { ToArray_F } from './types';
 export const toArray: ToArray_F = obj => {
   const out = switchV({
     condition: isArray(obj),
-    first: obj,
-    second: switchV(isDefined(obj), [obj], []),
+    truthy: obj,
+    falsy: switchV(isDefined(obj), [obj], []),
   });
 
   return out;

@@ -1,3 +1,5 @@
+import { createTests } from '@bemedev/vitest-extended';
+import { partialCall } from '../functions';
 import { inRangeInclusive } from './inRangeInclusive';
 import { constructLength } from './length.fixture';
 import { multiChar } from './multiChar';
@@ -33,7 +35,7 @@ describe('exactLength', () => {
     });
   });
 
-  describe('#3 => exact: 10', () => {
+  describe('#2 => exact: 10', () => {
     const useTests = constructTests(10, 20);
 
     useTests({
@@ -56,5 +58,69 @@ describe('exactLength', () => {
         { invite: 'Char: n20', value: multiChar('n', 20) },
       ],
     });
+  });
+
+  describe('#3 .low', () => {
+    const { acceptation } = createTests(inRangeInclusive.low);
+
+    const { success } = createTests(
+      partialCall(inRangeInclusive.low, 2, 5),
+    );
+
+    describe('#0 => Acceptation', acceptation);
+
+    describe(
+      '#1 => Tests',
+      success(
+        {
+          invite: 'At the left range',
+          parameters: multiChar('d', 2),
+          expected: {
+            bool: true,
+            value: multiChar('d', 2),
+          },
+        },
+        {
+          invite: 'At the right range',
+          parameters: multiChar('d', 5),
+          expected: {
+            bool: true,
+            value: multiChar('d', 5),
+          },
+        },
+        {
+          invite: 'In the range #1',
+          parameters: multiChar('d', 3),
+          expected: {
+            bool: true,
+            value: multiChar('d', 3),
+          },
+        },
+        {
+          invite: 'In the range #2',
+          parameters: multiChar('d', 4),
+          expected: {
+            bool: true,
+            value: multiChar('d', 4),
+          },
+        },
+        {
+          invite: 'Outside Left',
+          parameters: multiChar('d', 1),
+          expected: {
+            bool: false,
+            value: multiChar('d', 1),
+          },
+        },
+        {
+          invite: 'Outside Right',
+          parameters: multiChar('d', 10),
+          expected: {
+            bool: false,
+            value: multiChar('d', 10),
+          },
+        },
+      ),
+    );
   });
 });
