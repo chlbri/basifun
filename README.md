@@ -1,6 +1,6 @@
 # @bemedev/basifun
 
-# Deprecated - replace with @bemedev/basifun
+# Deprecated - replaced by @bemedev/basifun
 
 <br/>
 
