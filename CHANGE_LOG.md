@@ -5,7 +5,7 @@
 
 ## [0.1.4] 2025/01/28 23:10
 
-- Change the name to basifun
+- Change the name to "basifun"
 
 <br/>
 
