@@ -1,6 +1,6 @@
 {
-  "name": "@bemedev/basicfunc",
-  "version": "0.1.3",
+  "name": "@bemedev/basifun",
+  "version": "0.1.4",
   "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chlbri/basifunc"
+    "url": "https://github.com/chlbri/basifun"
   },
   "exports": {
     ".": {
