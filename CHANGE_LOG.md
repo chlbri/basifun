@@ -3,6 +3,12 @@
 <br/>
 <br/>
 
+## [0.1.5] 2025/01/29 18:00
+
+- Add function "identify"
+
+<br/>
+
 ## [0.1.4] 2025/01/28 23:10
 
 - Change the name to "basifun"
