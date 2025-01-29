@@ -1,5 +1,7 @@
 # @bemedev/basifun
 
+<br/>
+
 Collection de fonctions TypeScript de base pour simplifier le
 développement.
 
