@@ -84,7 +84,51 @@
         "runOn": "folderOpen",
         "instanceLimit": 1
       }
-    }
+    },
     // #endregion
+    {
+      "label": "pnpm:prettier",
+      "type": "npm",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "new",
+        "group": "test",
+        "clear": true,
+        "close": true
+      },
+      "group": "test",
+      "script": "prettier",
+      "isBackground": false,
+      "detail": "Lint the package",
+      "dependsOn": "pnpm:test",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1
+      }
+    },
+    {
+      "label": "pnpm:p-q",
+      "type": "npm",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "new",
+        "group": "test",
+        "clear": true,
+        "close": true
+      },
+      "group": "test",
+      "script": "p-q",
+      "isBackground": false,
+      "detail": "Lint the package",
+      "dependsOn": "pnpm:prettier",
+      "runOptions": {
+        "runOn": "folderOpen",
+        "instanceLimit": 1
+      }
+    }
   ]
 }
