@@ -8,7 +8,7 @@ import { nodeExternals } from 'rollup-plugin-node-externals';
 import tscAlias from 'rollup-plugin-tsc-alias';
 import typescript from 'rollup-plugin-typescript2';
 
-const ignore = [
+const exclude = [
   '**/*.test.ts',
   '**/*.test-d.ts',
   './src/types.ts',
@@ -19,6 +19,8 @@ const ignore = [
   'src/tests/**/*',
   'src/config/**/*',
 ];
+
+const ignore = [...exclude, '**/*.types.ts', '**/types.ts'];
 
 const input = Object.fromEntries(
   globSync('src/**/*.ts', {
@@ -43,7 +45,7 @@ export default defineConfig({
     tscAlias(),
     typescript({
       tsconfigOverride: {
-        exclude: ignore,
+        exclude,
       },
     }),
 
