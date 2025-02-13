@@ -8,7 +8,6 @@ const toArray = t.anify<typeof func>();
 const { success: useTests } = createTests.withImplementation(toArray, {
   instanciation: () =>
     import(`${this1}/arrays/toArray`).then(({ toArray }) => {
-      console.log(toArray);
       return toArray;
     }),
   name: 'toArray',

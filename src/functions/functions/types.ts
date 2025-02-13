@@ -49,3 +49,27 @@ export type Promisify_F = <T extends CbParams>(fn: Fn<T>) => ResultFrom<T>;
 export type GenericFunction_F = <P extends any[], R = any>(
   fn: Fn<P, R>,
 ) => (...params: P) => R;
+
+export interface TimeoutPromise<T = any> {
+  (): Promise<T>;
+  abort: () => void;
+  id: string;
+}
+
+export type TypeFromTimeout<T extends TimeoutPromise> =
+  T extends TimeoutPromise<infer U> ? U : never;
+
+export type TypeFromTimeouts<T extends TimeoutPromise[]> = TypeFromTimeout<
+  T[number]
+>;
+
+export type WithTimeout_F = <T = any>(
+  promise: () => Promise<T>,
+  id: string,
+  ..._timeouts: number[]
+) => TimeoutPromise<T>;
+
+export type RacePromises_F = <T extends TimeoutPromise<any>[]>(
+  id: string,
+  ..._promises: T
+) => TimeoutPromise<TypeFromTimeouts<T>>;
