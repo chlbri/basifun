@@ -3,6 +3,13 @@
 <br/>
 <br/>
 
+## [0.1.6] 2025/02/13 10:00
+
+- Add functions "racePromises" and "withTimeout"
+- 100% coverage
+
+<br/>
+
 ## [0.1.5] 2025/01/29 18:00
 
 - Add function "identify"

@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/basifun",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -176,7 +176,6 @@
   "devDependencies": {
     "@bemedev/build-tests": "^0.1.0",
     "@bemedev/fsf": "^0.7.3",
-    "@bemedev/sleep": "^0.1.2",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.0.2",
     "@bemedev/vitest-extended": "^1.2.3",
@@ -212,6 +211,7 @@
     "vitest": "^3.0.5"
   },
   "dependencies": {
+    "@bemedev/sleep": "^0.1.2",
     "@bemedev/types": "^0.1.3"
   }
 }
