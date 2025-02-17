@@ -3,7 +3,7 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { checkKeys as func } from './checkKeys';
 
-const checkKeys = t.anify<typeof func>();
+const checkKeys = t.unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(checkKeys, {
   instanciation: () =>

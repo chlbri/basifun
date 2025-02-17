@@ -4,7 +4,7 @@ import { t } from '@bemedev/types';
 import { isDefined as func } from './isDefined';
 
 describe('isDefined', () => {
-  let isDefined = t.anify<typeof func>();
+  let isDefined = t.unknown<typeof func>();
 
   beforeAll(() => {
     return import(this1).then(module => {

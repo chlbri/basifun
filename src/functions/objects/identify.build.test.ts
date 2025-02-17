@@ -3,7 +3,7 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { identify as func } from './identify';
 
-const identify = t.anify<typeof func>();
+const identify = t.unknown<typeof func>();
 
 const { success, acceptation } = createTests.withImplementation(identify, {
   instanciation: () =>

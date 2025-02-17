@@ -55,6 +55,13 @@ MIT
 ...
 </summary>
 
+## [0.2.0] 2025/02/17 17:00
+
+- Update @bemedev/types to 0.1.4
+- Add @bemedev/types as peer dependency
+
+<br/>
+
 ## [0.1.6] 2025/02/13 10:00
 
 - Add functions "racePromises" and "withTimeout"
