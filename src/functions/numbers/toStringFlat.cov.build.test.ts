@@ -3,7 +3,7 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { toStringFlat as func } from './toStringFlat';
 
-const toStringFlat = t.anify<typeof func>();
+const toStringFlat = t.unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(
   toStringFlat,

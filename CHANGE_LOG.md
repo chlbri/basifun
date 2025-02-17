@@ -3,7 +3,7 @@
 <br/>
 <br/>
 
-## [0.1.7] 2025/02/17 17:00
+## [0.2.0] 2025/02/17 17:00
 
 - Update @bemedev/types to 0.1.4
 - Add @bemedev/types as peer dependency

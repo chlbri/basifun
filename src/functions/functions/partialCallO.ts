@@ -10,7 +10,7 @@ import type { PartialCallO_F } from './types';
  */
 export const partialCallO: PartialCallO_F = (f, headArgs) => {
   return remainArgs => {
-    const params = t.anify<any>({ ...remainArgs, ...headArgs });
+    const params = t.any({ ...remainArgs, ...headArgs });
     return f(params);
   };
 };

@@ -11,7 +11,7 @@ import type { Promisify_F } from './types';
  * @returns A promisified function
  */
 export const typedPromisify: Promisify_F = fn => {
-  const out = t.anify<any>(promisify(fn));
+  const out = t.any(promisify(fn));
 
   return out;
 };

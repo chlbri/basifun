@@ -3,7 +3,7 @@ import { t } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { toArray as func } from './toArray';
 
-const toArray = t.anify<typeof func>();
+const toArray = t.unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(toArray, {
   instanciation: () =>
