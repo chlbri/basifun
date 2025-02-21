@@ -1,4 +1,4 @@
-import type { WithTimeout_F } from './types';
+import type { WithTimeout_F } from '../types';
 
 export const MAX_TIMEOUT = 1_000_000;
 /**
@@ -31,8 +31,8 @@ export const withTimeout: WithTimeout_F = (promise, id, ...timeouts) => {
 
   const controller = new AbortController();
 
-  const timeoutPromises = _timeouts.map((millis, i) => {
-    return new Promise((_, reject) => {
+  const timeoutPromises = _timeouts.map(async (millis, i) => {
+    return await new Promise((_, reject) => {
       controller.signal.addEventListener('abort', () => {
         reject('Aborted.');
       });
@@ -44,14 +44,14 @@ export const withTimeout: WithTimeout_F = (promise, id, ...timeouts) => {
     });
   });
 
-  const out = () =>
-    Promise.race([promise(), ...timeoutPromises]).finally(() => {
+  const out = async () =>
+    (await Promise.race([promise(), ...timeoutPromises]).finally(() => {
       timeoutPids.forEach(pid => {
         if (pid) {
           clearTimeout(pid);
         }
       });
-    }) as any;
+    })) as any;
 
   out.abort = () => controller.abort();
   out.id = id;

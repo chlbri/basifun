@@ -25,7 +25,8 @@
     "noEmit": true,
     "declarationMap": true,
     "paths": {
-      "#types": ["./src/types.ts"]
+      "#types": ["./src/types.types.ts"],
+      "~fixtures": ["./src/fixtures.ts"]
     }
   }
 }

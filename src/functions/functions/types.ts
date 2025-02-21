@@ -1,5 +1,5 @@
-import type { AllowedNames, ArrayR, SubType } from '#types';
 import type { Fn } from '@bemedev/types';
+import type { AllowedNames, ArrayR, SubType } from '../../types.types';
 
 type KeysFn<T extends object = object> = keyof SubType<T, Fn>;
 

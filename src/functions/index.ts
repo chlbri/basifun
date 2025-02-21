@@ -1,4 +1,5 @@
 export * from './arrays';
+export * from './booleans';
 export * from './commons';
 export * from './functions';
 export * from './numbers';

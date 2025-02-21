@@ -1,5 +1,5 @@
+import type { CallBackError, CallBackResult } from '../types';
 import { typedPromisify } from './promisify';
-import type { CallBackError, CallBackResult } from './types';
 
 declare const fn1: (a: number, b: string, cb: CallBackError) => number;
 const prom1 = typedPromisify(fn1);
