@@ -208,7 +208,6 @@
     "@bemedev/types": "^0.1.5",
     "@bemedev/vitest-alias": "^0.0.3",
     "@bemedev/vitest-exclude": "^0.0.2",
-    "@bemedev/vitest-extended": "^1.3.1",
     "@eslint/eslintrc": "^3.3.0",
     "@eslint/js": "^9.20.0",
     "@rollup/plugin-typescript": "^12.1.2",
@@ -244,6 +243,7 @@
     "@bemedev/sleep": "^0.1.2"
   },
   "peerDependencies": {
-    "@bemedev/types": "^0.1.5"
+    "@bemedev/types": "^0.1.5",
+    "@bemedev/vitest-extended": "^1.3.1"
   }
 }
