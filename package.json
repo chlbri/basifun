@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/basifun",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -60,6 +60,20 @@
       "node": "./lib/functions/common/index.cjs",
       "require": "./lib/functions/common/index.cjs",
       "default": "./lib/functions/common/index.js"
+    },
+    "./functions/*": {
+      "types": "./lib/functions/functions/*.d.ts",
+      "import": "./lib/functions/functions/*.js",
+      "node": "./lib/functions/functions/*.cjs",
+      "require": "./lib/functions/functions/*.cjs",
+      "default": "./lib/functions/functions/*.js"
+    },
+    "./function": {
+      "types": "./lib/functions/functions/index.d.ts",
+      "import": "./lib/functions/functions/index.js",
+      "node": "./lib/functions/functions/index.cjs",
+      "require": "./lib/functions/functions/index.cjs",
+      "default": "./lib/functions/functions/index.js"
     },
     "./numbers/*": {
       "types": "./lib/functions/numbers/*.d.ts",
