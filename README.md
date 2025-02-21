@@ -55,6 +55,12 @@ MIT
 ...
 </summary>
 
+## [0.2.0] 2025/02/21 21:30
+
+- Add toPromise
+
+<br/>
+
 ## [0.2.0] 2025/02/17 17:00
 
 - Update @bemedev/types to 0.1.4

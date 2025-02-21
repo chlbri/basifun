@@ -1,4 +1,4 @@
-import type { ToPrimitiveTuple } from '#types';
+import type { ToPrimitiveTuple } from '../../types.types';
 import type { ExactLength, MaxLength, MinLength } from './types';
 
 type T1 = ToPrimitiveTuple<[MinLength<1, '34'>, ExactLength<4, 'erte'>]>;

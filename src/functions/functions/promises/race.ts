@@ -1,4 +1,4 @@
-import type { RacePromises_F } from './types';
+import type { RacePromises_F } from '../types';
 import { withTimeout } from './withTimeout';
 
 export const racePromises: RacePromises_F = (id, ..._promises) => {

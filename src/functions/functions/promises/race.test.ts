@@ -1,5 +1,6 @@
 import sleep from '@bemedev/sleep';
 import { t } from '@bemedev/types';
+import { fakeWaiter } from '~fixtures';
 import { racePromises } from './race';
 import { withTimeout } from './withTimeout';
 
@@ -21,7 +22,7 @@ describe('racePromises', () => {
 
     const race = racePromises('race', promise1, promise2);
 
-    vi.advanceTimersByTimeAsync(200);
+    fakeWaiter(200);
     await expect(race()).resolves.toBe('first');
   });
 
@@ -42,7 +43,7 @@ describe('racePromises', () => {
       promise2.abort = abortSpy;
 
       // Resolve the first promise
-      vi.advanceTimersByTimeAsync(200);
+      fakeWaiter(200);
       result = await racePromises('race', promise1, promise2)();
     };
 
@@ -80,7 +81,7 @@ describe('racePromises', () => {
     });
 
     it('#02 => should reject with the right error string', async () => {
-      vi.advanceTimersByTimeAsync(200);
+      fakeWaiter(200);
       await expect(race()).rejects.toThrow(TEST_ERROR);
     });
   });
@@ -97,7 +98,7 @@ describe('racePromises', () => {
     });
 
     it('#02 => should retain the provided identifier after resolving', async () => {
-      vi.advanceTimersByTimeAsync(0);
+      fakeWaiter(0);
       await expect(race()).resolves.toBe('first');
     });
   });
@@ -124,10 +125,25 @@ describe('racePromises', () => {
       'p3',
     );
 
-    vi.advanceTimersByTimeAsync(300);
+    fakeWaiter(300);
     const race = racePromises('race', promise1, promise2, promise3);
     const result = await race();
 
     expect(result).toBe('second');
+  });
+
+  it('#07 => should reject if first rejects', async () => {
+    const promise1 = withTimeout(
+      () => sleep(300).then(() => 'first'),
+      'p1',
+    );
+    const promise2 = withTimeout(async () => {
+      await sleep(100);
+      return Promise.reject('error');
+    }, 'p2');
+
+    fakeWaiter(300);
+    const race = racePromises('test', promise1, promise2);
+    await expect(race).rejects.toBe('error');
   });
 });

@@ -1,6 +1,6 @@
 import { t } from '@bemedev/types';
 import { promisify } from 'node:util';
-import type { Promisify_F } from './types';
+import type { Promisify_F } from '../types';
 
 /**
  * Promisify a function
