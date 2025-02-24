@@ -1,4 +1,8 @@
-import type { Identify_F } from './types';
+import type { Identitfy } from './types';
+
+export type Identify_F = <const T>(
+  arg?: Record<string, T>,
+) => Identitfy<T>[];
 
 export const identify: Identify_F = arg => {
   if (!arg) return [];
