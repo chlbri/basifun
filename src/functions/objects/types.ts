@@ -8,7 +8,3 @@ export type ObjectToArray_F = <T extends Record<string, any>>(
 ) => T[string][];
 
 export type Identitfy<T> = T extends object ? T & { __id: string } : T;
-
-export type Identify_F = <const T extends object>(
-  arg?: Record<string, T>,
-) => Identitfy<T>[];
