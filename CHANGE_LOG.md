@@ -3,6 +3,12 @@
 <br/>
 <br/>
 
+## [0.3.2] 2025/02/24 15:30
+
+- Fix identify types
+
+<br/>
+
 ## [0.3.1] 2025/02/24 14:00
 
 - Add typing for toArray
