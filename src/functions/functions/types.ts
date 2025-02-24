@@ -63,7 +63,6 @@ export type TypeFromTimeouts<T extends TimeoutPromise[]> = TypeFromTimeout<
   T[number]
 >;
 
-
 export type RacePromises_F = <T extends TimeoutPromise<any>[]>(
   id: string,
   ..._promises: T
