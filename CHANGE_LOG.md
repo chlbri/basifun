@@ -3,6 +3,13 @@
 <br/>
 <br/>
 
+## [0.3.1] 2025/02/24 14:00
+
+- Add typing for toArray
+- Add a safe method to withTimeout
+
+<br/>
+
 ## [0.2.0] 2025/02/17 17:00
 
 - Update @bemedev/types to 0.1.4

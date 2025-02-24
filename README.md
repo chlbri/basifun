@@ -55,6 +55,13 @@ MIT
 ...
 </summary>
 
+## [0.3.1] 2025/02/24 14:00
+
+- Add typing for toArray
+- Add a safe method to withTimeout
+
+<br/>
+
 ## [0.2.0] 2025/02/21 21:30
 
 - Add toPromise
