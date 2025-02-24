@@ -1,14 +1,19 @@
-import { switchV } from '../booleans';
 import { isDefined } from '../types';
 import { isArray } from './isArray';
-import type { ToArray_F } from './types';
+
+export interface ToArray_F {
+  <T>(obj: any): T[];
+  typed: <T>(obj: T | T[] | readonly T[]) => Exclude<T, undefined>[];
+}
 
 export const toArray: ToArray_F = obj => {
-  const out = switchV({
-    condition: isArray(obj),
-    truthy: obj,
-    falsy: switchV(isDefined(obj), [obj], []),
-  });
-
-  return out;
+  if (isArray(obj)) {
+    return obj;
+  } else {
+    const check = isDefined(obj);
+    if (!check) return [];
+    return [obj];
+  }
 };
+
+toArray.typed = toArray;

@@ -1,6 +1,6 @@
 {
   "name": "@bemedev/basifun",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Basic ts functions",
   "author": {
     "email": "bri_lvi@icloud.com",
@@ -168,7 +168,11 @@
   ],
   "keywords": [
     "types",
-    "usefull"
+    "usefull",
+    "functions",
+    "helpers",
+    "utils",
+    "bemedev"
   ],
   "files": [
     "lib",

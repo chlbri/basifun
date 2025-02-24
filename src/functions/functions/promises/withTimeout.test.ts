@@ -1,5 +1,6 @@
 import sleep from '@bemedev/sleep';
 import { t } from '@bemedev/types';
+import { createFakeWaiter } from '@bemedev/vitest-extended';
 import { withTimeout } from './withTimeout';
 
 const clearTimeoutSpy = vi.spyOn(global, 'clearTimeout');
@@ -83,10 +84,20 @@ describe('withTimeout', () => {
     });
   });
 
-  test('#07 => should have correct id property', () => {
+  test('#07 => should have correct id property', async () => {
     const promise = () => Promise.resolve();
     const wrapped = withTimeout(promise, 'test-id', 1000);
 
+    createFakeWaiter(vi)(1000);
     expect(wrapped.id).toBe('test-id');
+    await expect(wrapped()).resolves.toBeUndefined();
+  });
+
+  test('#08 => no error', async () => {
+    const promise = () => sleep(3000);
+    const wrapped = withTimeout.safe(promise, 'test', 2000);
+
+    createFakeWaiter(vi)(3000);
+    await expect(wrapped()).resolves.toBeUndefined();
   });
 });

@@ -1,4 +1,14 @@
-import type { WithTimeout_F } from '../types';
+import type { TimeoutPromise } from '../types';
+
+export type WithTimeout_F<N extends undefined = never> = <T = any>(
+  promise: () => Promise<T>,
+  id: string,
+  ..._timeouts: number[]
+) => TimeoutPromise<T | N>;
+
+export type WithTimeout = WithTimeout_F & {
+  safe: WithTimeout_F<undefined>;
+};
 
 export const MAX_TIMEOUT = 1_000_000;
 /**
@@ -20,7 +30,7 @@ export const MAX_TIMEOUT = 1_000_000;
  * // To abort the promise
  * wrappedPromise.abort();
  */
-export const withTimeout: WithTimeout_F = (promise, id, ...timeouts) => {
+export const withTimeout: WithTimeout = (promise, id, ...timeouts) => {
   // Add a positive infinity timeout to ensure the promise never hangs.
   const _timeouts = [...timeouts, MAX_TIMEOUT];
 
@@ -57,4 +67,12 @@ export const withTimeout: WithTimeout_F = (promise, id, ...timeouts) => {
   out.id = id;
 
   return out;
+};
+
+withTimeout.safe = (promise, id, ...timeouts) => {
+  const out1 = withTimeout(promise, id, ...timeouts);
+  const out2 = () => out1().catch(() => undefined);
+  const out3 = withTimeout(out2, id);
+
+  return out3;
 };
