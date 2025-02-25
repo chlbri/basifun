@@ -1,3 +1,3 @@
-import type { Undefiny } from '@bemedev/types';
-
-export const isDefined = <T>(value?: Undefiny<T>): value is T => !!value;
+export const isDefined = <T>(value?: T | undefined | null): value is T => {
+  return value !== undefined && value !== null;
+};

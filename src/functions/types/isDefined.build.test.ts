@@ -1,24 +1,16 @@
 import { this1 } from '@bemedev/build-tests/constants';
 
-import { t } from '@bemedev/types';
+import { createTests } from '@bemedev/vitest-extended';
 import { isDefined as func } from './isDefined';
+import { IS_DEFINED_TESTS } from './isDefined.fixture';
 
 describe('isDefined', () => {
-  let isDefined = t.unknown<typeof func>();
-
-  beforeAll(() => {
-    return import(this1).then(module => {
-      isDefined = module.isDefined;
-    });
+  const { acceptation, success } = createTests.withImplementation(func, {
+    instanciation: () => import(this1).then(module => module.isDefined),
+    name: 'isDefined',
   });
 
-  test.each([
-    ['No value', undefined, false],
-    ['string', 'str', true],
-    ['number', 50, true],
-    ['boolean', true, true],
-    ['boolean', false, false],
-  ] as const)('#%# => %s', (_, args, expected) => {
-    expect(isDefined(args)).toBe(expected);
-  });
+  describe('#00 => acceptation', acceptation);
+
+  describe('#01 => success', success(...IS_DEFINED_TESTS));
 });

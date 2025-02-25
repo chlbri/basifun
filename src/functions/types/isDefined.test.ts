@@ -1,14 +1,11 @@
 import { createTests } from '@bemedev/vitest-extended';
 import { isDefined } from './isDefined';
+import { IS_DEFINED_TESTS } from './isDefined.fixture';
 
-const { success: useTests } = createTests(isDefined);
-describe(
-  'isDefined',
-  useTests(
-    { expected: false, invite: 'no Value' },
-    { expected: false, invite: 'undefined', parameters: [undefined] },
-    { expected: true, invite: 'number : 9', parameters: 9 },
-    { expected: false, invite: 'boolean : false', parameters: false },
-    { expected: true, invite: 'boolean : true', parameters: [true] },
-  ),
-);
+describe('isDefined', () => {
+  const { acceptation, success } = createTests(isDefined);
+
+  describe('#00 => acceptation', acceptation);
+
+  describe('#01 => success', success(...IS_DEFINED_TESTS));
+});

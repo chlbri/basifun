@@ -55,6 +55,12 @@ MIT
 ...
 </summary>
 
+## [0.3.3] 2025/02/25 12:40
+
+- Fix isDefined function
+
+<br/>
+
 ## [0.3.2] 2025/02/24 15:30
 
 - Fix identify types
