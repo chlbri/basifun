@@ -13,7 +13,7 @@ const _constructLength = <P extends any[]>(
   // #region Config
   const actual = partialCall<P, [string], string>(fn, ...params);
   const toError = (str: string) => error(...params, str);
-  const { success, fails, acceptation } = createTests(actual, toError);
+  const { success, fails, acceptation } = createTests(actual, { toError });
   // #endregion
 
   const out = ({ errors: _errors, success: _success }: Args) => {
