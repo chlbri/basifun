@@ -3,6 +3,13 @@
 <br/>
 <br/>
 
+## [0.3.4] 2025/06/29 22:45
+
+- Fix usage of node:util
+- **_100%_** coverage
+
+<br/>
+
 ## [0.3.3] 2025/02/25 12:40
 
 - Fix isDefined function
