@@ -1,7 +1,7 @@
-import type { Fn } from '@bemedev/types';
+import type { types } from '@bemedev/types';
 
 export type ToPromise_F = <P extends any[], R = any>(
-  f: Fn<P, R>,
+  f: types.Fn<P, R>,
   _this?: any,
 ) => (...args: P) => Promise<R>;
 

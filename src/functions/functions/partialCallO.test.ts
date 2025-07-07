@@ -1,9 +1,9 @@
-import type { Fn } from '@bemedev/types';
+import type { types } from '@bemedev/types';
 import { useEach } from '@bemedev/vitest-extended';
 import { toStringFlat } from '../numbers/toStringFlat';
 import { partialCallO } from './partialCallO';
 
-const add: Fn<[{ valN: number; valS: string }], string> = ({
+const add: types.Fn<[{ valN: number; valS: string }], string> = ({
   valN,
   valS,
 }) => valS + valN;
