@@ -1,5 +1,5 @@
 import sleep from '@bemedev/sleep';
-import { t } from '@bemedev/types';
+import { typings } from '@bemedev/types';
 import { createFakeWaiter } from '@bemedev/vitest-extended';
 import { withTimeout } from './withTimeout';
 
@@ -59,7 +59,7 @@ describe('withTimeout', () => {
     const promise = () => Promise.resolve('success');
     const wrapped = withTimeout(promise, 'test', 100, 200, 300);
 
-    let result = t.string;
+    let result = typings.strings.type;
 
     test('#01 => result is undefined', () => {
       expect(result).toBeUndefined();

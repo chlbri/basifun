@@ -1,11 +1,11 @@
-import type { Fn } from '@bemedev/types';
+import type { types } from '@bemedev/types';
 import type { AllowedNames, ArrayR, SubType } from '../../types.types';
 
-type KeysFn<T extends object = object> = keyof SubType<T, Fn>;
+type KeysFn<T extends object = object> = keyof SubType<T, types.Fn>;
 
 export type Refunction_F = <
   T extends object = object,
-  FnKey extends KeysFn<T> = AllowedNames<T, Fn>,
+  FnKey extends KeysFn<T> = AllowedNames<T, types.Fn>,
 >(
   object: T,
   fn: FnKey,
@@ -16,14 +16,14 @@ export type PartialCall_F = <
   U extends ArrayR = ArrayR,
   R = any,
 >(
-  f: Fn<[...T, ...U], R>,
+  f: types.Fn<[...T, ...U], R>,
   ...headArgs: T
 ) => (...tailArgs: U) => R;
 
 export type PartialCallO_F = <T extends object, U extends T, R>(
-  f: Fn<[arg: U], R>,
+  f: types.Fn<[arg: U], R>,
   headArgs?: T,
-) => Fn<[remainArgs: Omit<U, keyof T>], R>;
+) => types.Fn<[remainArgs: Omit<U, keyof T>], R>;
 
 export type CallBackError = (err: any) => void;
 
@@ -41,13 +41,15 @@ export type ResultFrom<T> = T extends [
   ...infer Args extends any[],
   infer Cb extends Callback,
 ]
-  ? Fn<Args, Promise<GetResult<Cb>>>
+  ? types.Fn<Args, Promise<GetResult<Cb>>>
   : never;
 
-export type Promisify_F = <T extends CbParams>(fn: Fn<T>) => ResultFrom<T>;
+export type Promisify_F = <T extends CbParams>(
+  fn: types.Fn<T>,
+) => ResultFrom<T>;
 
 export type GenericFunction_F = <P extends any[], R = any>(
-  fn: Fn<P, R>,
+  fn: types.Fn<P, R>,
 ) => (...params: P) => R;
 
 export interface TimeoutPromise<T = any> {

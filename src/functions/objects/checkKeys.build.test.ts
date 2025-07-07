@@ -1,9 +1,9 @@
 import { this1 } from '@bemedev/build-tests/constants';
-import { t } from '@bemedev/types';
+import { typings } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { checkKeys as func } from './checkKeys';
 
-const checkKeys = t.unknown<typeof func>();
+const checkKeys = typings.commons.unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(checkKeys, {
   instanciation: () =>

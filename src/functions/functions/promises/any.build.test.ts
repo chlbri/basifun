@@ -1,14 +1,14 @@
 import { this1 } from '@bemedev/build-tests/constants';
 import sleep from '@bemedev/sleep';
-import { t, type Fn } from '@bemedev/types';
+import { typings, type types } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { TimeoutPromise } from '../types';
 import { withTimeout } from './withTimeout';
 
 describe('anyPromises', () => {
   const abortSpy = vi.fn();
-  type UseTest = Fn<[string, ...TimeoutPromise<any>[]], any>;
-  const anyPromises = t.unknown<UseTest>();
+  type UseTest = types.Fn<[string, ...TimeoutPromise<any>[]], any>;
+  const anyPromises = typings.commons.unknown<UseTest>();
 
   const { acceptation, success, fails } = createTests.withImplementation(
     anyPromises,

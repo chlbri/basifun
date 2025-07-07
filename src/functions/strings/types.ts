@@ -1,11 +1,9 @@
-import type { LengthOf } from '@bemedev/types';
-
 export type StringLength<
   T extends string,
   Counter extends number[] = [],
 > = T extends `${string}${infer Tail}`
   ? StringLength<Tail, [...Counter, 0]>
-  : LengthOf<Counter>;
+  : Counter['length'];
 
 export type StringCompare<
   First extends number,
@@ -13,9 +11,9 @@ export type StringCompare<
   Counter extends number[] = [],
 > = First extends Second
   ? 0
-  : LengthOf<Counter> extends First
+  : Counter['length'] extends First
     ? -1
-    : LengthOf<Counter> extends Second
+    : Counter['length'] extends Second
       ? 1
       : StringCompare<First, Second, [...Counter, 0]>;
 

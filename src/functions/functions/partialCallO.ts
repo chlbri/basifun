@@ -1,4 +1,4 @@
-import { t } from '@bemedev/types';
+import { castings } from '@bemedev/types';
 import type { PartialCallO_F } from './types';
 
 /**
@@ -10,7 +10,7 @@ import type { PartialCallO_F } from './types';
  */
 export const partialCallO: PartialCallO_F = (f, headArgs) => {
   return remainArgs => {
-    const params = t.any({ ...remainArgs, ...headArgs });
+    const params = castings.commons.any({ ...remainArgs, ...headArgs });
     return f(params);
   };
 };
