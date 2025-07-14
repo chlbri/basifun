@@ -111,9 +111,6 @@ importers:
       sort-keys:
         specifier: ^5.1.0
         version: 5.1.0
-      this-gen-1:
-        specifier: file:.pack/bemedev-basifun-0.5.0.tgz
-        version: '@bemedev/basifun@file:.pack/bemedev-basifun-0.5.0.tgz(@bemedev/types@0.2.5)'
       tslib:
         specifier: ^2.8.1
         version: 2.8.1
@@ -153,13 +150,6 @@ packages:
   '@bcoe/v8-coverage@1.0.2':
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
-
-  '@bemedev/basifun@file:.pack/bemedev-basifun-0.5.0.tgz':
-    resolution: {integrity: sha512-ja0VXio2SipiwP2nIfxzy0FR5aUb9sP7YhoNceG94bQhVelG1nS1VELyN8f7aCy3HI+clDty4+ptRHRaF/+sOQ==, tarball: file:.pack/bemedev-basifun-0.5.0.tgz}
-    version: 0.5.0
-    engines: {node: '>=20'}
-    peerDependencies:
-      '@bemedev/types': ^0.1.5
 
   '@bemedev/build-tests@0.1.1':
     resolution: {integrity: sha512-fURzW6HevKz+40SMnAg17r40sFYgcBNrGBU2K/dMdbh0ETJYdsuLAiBj1+Le5Yt2Iyq4rLX4iidISydzV7tC+g==}
@@ -1771,11 +1761,6 @@ snapshots:
       '@babel/helper-validator-identifier': 7.27.1
 
   '@bcoe/v8-coverage@1.0.2': {}
-
-  '@bemedev/basifun@file:.pack/bemedev-basifun-0.5.0.tgz(@bemedev/types@0.2.5)':
-    dependencies:
-      '@bemedev/sleep': 0.1.2
-      '@bemedev/types': 0.2.5
 
   '@bemedev/build-tests@0.1.1(vitest@3.2.4(@types/node@24.0.13)(tsx@4.20.3))':
     dependencies:
