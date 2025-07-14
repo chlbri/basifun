@@ -10,7 +10,7 @@ const myPromisify = (fn: any) => {
         return resolve(results[0]);
       }
       args.push(customCallback);
-      fn.call(this, ...args);
+      fn(...args);
     });
   };
 };

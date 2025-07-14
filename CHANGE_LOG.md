@@ -3,6 +3,14 @@
 <br/>
 <br/>
 
+## [0.5.2] 2025/07/14 09:45
+
+- Upgrade deps
+- Ameliorate promisify function
+- **_100%_** coverage
+
+<br/>
+
 ## [0.5.1] 2025/07/14 09:05
 
 - Upgrade @bemedev/types
