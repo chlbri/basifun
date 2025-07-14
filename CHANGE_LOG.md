@@ -3,6 +3,13 @@
 <br/>
 <br/>
 
+## [0.5.1] 2025/07/14 09:05
+
+- Upgrade @bemedev/types
+- **_100%_** coverage
+
+<br/>
+
 ## [0.5.0] 2025/07/07 20:35
 
 - Upgrade @bemedev/types
