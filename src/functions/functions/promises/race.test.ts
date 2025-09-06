@@ -1,5 +1,5 @@
+import stype from '#bemedev/features/strings/typings/index';
 import sleep from '@bemedev/sleep';
-import { typings } from '@bemedev/types';
 import { fakeWaiter } from '~fixtures';
 import { racePromises } from './race';
 import { withTimeout } from './withTimeout';
@@ -28,7 +28,7 @@ describe('racePromises', () => {
 
   describe('#02 => should cancel all remaining promises', async () => {
     const abortSpy = vi.fn();
-    let result = typings.strings.type;
+    let result = stype.type;
 
     const race = async () => {
       const promise1 = withTimeout(

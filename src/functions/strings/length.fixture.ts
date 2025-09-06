@@ -1,4 +1,4 @@
-import type { types } from '@bemedev/types';
+import type { Fn } from '#bemedev/globals/types';
 import { createTests } from '@bemedev/vitest-extended';
 import { partialCall } from '../functions';
 
@@ -6,8 +6,8 @@ export type Arg = { invite: string; value: string };
 type Args = { errors: Arg[]; success: Arg[] };
 
 const _constructLength = <P extends any[]>(
-  fn: types.Fn<[...P, string], string>,
-  error: types.Fn<[...P, string], string | undefined>,
+  fn: Fn<[...P, string], string>,
+  error: Fn<[...P, string], string | undefined>,
   ...params: P
 ) => {
   // #region Config
@@ -37,8 +37,8 @@ const _constructLength = <P extends any[]>(
 };
 
 type ConstructLength = <P extends any[]>(
-  fn: types.Fn<[...P, string], string>,
-  error: types.Fn<[...P, string], string | undefined>,
+  fn: Fn<[...P, string], string>,
+  error: Fn<[...P, string], string | undefined>,
 ) => (...params: P) => (params: Args) => void;
 
 export const constructLength: ConstructLength = (fn, error) => {

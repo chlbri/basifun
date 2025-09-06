@@ -1,9 +1,9 @@
+import { _unknown } from '#bemedev/globals/utils/_unknown';
 import { this1 } from '@bemedev/build-tests/constants';
-import { typings } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { identify as func } from './identify';
 
-const identify = typings.commons.unknown<typeof func>();
+const identify = _unknown<typeof func>();
 
 const { success, acceptation } = createTests.withImplementation(identify, {
   instanciation: () =>

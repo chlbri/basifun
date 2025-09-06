@@ -26,7 +26,9 @@
     "declarationMap": true,
     "paths": {
       "#types": ["./src/types.types.ts"],
-      "~fixtures": ["./src/fixtures.ts"]
-    }
+      "~fixtures": ["./src/fixtures.ts"],
+      "#bemedev/*": ["src/.bemedev/*"]
+    },
+    "baseUrl": "."
   }
 }

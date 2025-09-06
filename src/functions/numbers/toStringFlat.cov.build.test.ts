@@ -1,9 +1,9 @@
+import { _unknown } from '#bemedev/globals/utils/_unknown';
 import { this1 } from '@bemedev/build-tests/constants';
-import { typings } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { toStringFlat as func } from './toStringFlat';
 
-const toStringFlat = typings.commons.unknown<typeof func>();
+const toStringFlat = _unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(
   toStringFlat,

@@ -1,10 +1,9 @@
-import type { types } from '@bemedev/types';
+import type { Fn } from '#bemedev/globals/types';
 import { useEach } from '@bemedev/vitest-extended';
 import { toStringFlat } from '../numbers/toStringFlat';
 import { partialCall } from './partialCall';
 
-const add: types.Fn<[number, number], number> = (val1, val2) =>
-  val1 + val2;
+const add: Fn<[number, number], number> = (val1, val2) => val1 + val2;
 
 describe('#1 => same', () => {
   const same = partialCall(add);

@@ -1,4 +1,3 @@
-import { castings } from '@bemedev/types';
 import type { Promisify_F } from '../types';
 
 const myPromisify = (fn: any) => {
@@ -24,7 +23,7 @@ const myPromisify = (fn: any) => {
  * @returns A promisified function
  */
 export const typedPromisify: Promisify_F = fn => {
-  const out = castings.commons.any(myPromisify(fn));
+  const out = myPromisify(fn) as any;
 
   return out;
 };

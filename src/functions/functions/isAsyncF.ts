@@ -1,4 +1,4 @@
-import { types } from '@bemedev/types';
+import type { Fn } from '#bemedev/globals/types';
 
 export const isAsyncF = <
   Func extends { params: any[]; return: any } = {
@@ -7,7 +7,7 @@ export const isAsyncF = <
   },
 >(
   func: any,
-): func is types.Fn<Func['params'], Promise<Func['return']>> => {
+): func is Fn<Func['params'], Promise<Func['return']>> => {
   const check1 = func[Symbol.toStringTag] === 'AsyncFunction';
   const check2 = func.constructor.name === 'AsyncFunction';
 

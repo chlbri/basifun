@@ -1,9 +1,9 @@
+import _unknown from '#bemedev/features/common/castings/_unknown';
 import { this1 } from '@bemedev/build-tests/constants';
-import { typings } from '@bemedev/types';
 import { createTests } from '@bemedev/vitest-extended';
 import type { toArray as func } from './toArray';
 
-const toArray = typings.commons.unknown<typeof func>();
+const toArray = _unknown<typeof func>();
 
 const { success: useTests } = createTests.withImplementation(toArray, {
   instanciation: () =>

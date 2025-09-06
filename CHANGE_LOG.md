@@ -3,6 +3,13 @@
 <br/>
 <br/>
 
+## [0.5.3] 2025/09/16 10:45
+
+- Upgrade deps
+- Light the whole dependency
+
+<br/>
+
 ## [0.5.2] 2025/07/14 09:45
 
 - Upgrade deps
